@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleanSync - Data Cleaning Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CleanSync</h1>
+            <p class="subtitle">Automated Data Cleaning Tool</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-box" id="dropZone">
+                    <input type="file" id="fileInput" accept=".csv,.xlsx,.xls" style="display: none;">
+                    <div class="upload-content">
+                        <img src="{{ url_for('static', filename='upload-icon.svg') }}" alt="Upload" class="upload-icon">
+                        <p>Drag & drop your file here or</p>
+                        <button class="upload-btn" onclick="document.getElementById('fileInput').click()">Browse Files</button>
+                        <p class="file-types">Supported formats: CSV, Excel (.xlsx, .xls)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="options-section" id="optionsSection" style="display: none;">
+                <h2>Cleaning Options</h2>
+                <div class="options-grid">
+                    <div class="option">
+                        <label>
+                            <input type="checkbox" id="duplicates" checked>
+                            Handle Duplicates
+                        </label>
+                    </div>
+                    <div class="option">
+                        <label>
+                            <input type="checkbox" id="missingNum" checked>
+                            Handle Missing Values (Numeric)
+                        </label>
+                    </div>
+                    <div class="option">
+                        <label>
+                            <input type="checkbox" id="missingCateg" checked>
+                            Handle Missing Values (Categorical)
+                        </label>
+                    </div>
+                    <div class="option">
+                        <label>
+                            <input type="checkbox" id="outliers" checked>
+                            Handle Outliers
+                        </label>
+                    </div>
+                    <div class="option">
+                        <label>
+                            <input type="checkbox" id="encodeCateg" checked>
+                            Encode Categorical Variables
+                        </label>
+                    </div>
+                </div>
+                <button class="clean-btn" id="cleanBtn">Start Cleaning</button>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h2>Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Original Data</h3>
+                        <div class="data-preview" id="originalPreview"></div>
+                    </div>
+                    <div class="result-card">
+                        <h3>Cleaned Data</h3>
+                        <div class="data-preview" id="cleanedPreview"></div>
+                    </div>
+                </div>
+                <div class="download-section">
+                    <button class="download-btn" id="downloadBtn">Download Cleaned Data</button>
+                </div>
+            </div>
+        </main>
+
+        <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+            <div class="spinner"></div>
+            <p>Cleaning your data...</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
