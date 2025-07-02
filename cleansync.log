@@ -1,0 +1,31 @@
+29-06-2025 12:51:09.54 - INFO - Started validation of input parameters...
+29-06-2025 12:51:09.54 - INFO - Completed validation of input parameters
+29-06-2025 12:51:09.54 - INFO - Started handling of duplicates... Method: "AUTO"
+29-06-2025 12:51:09.58 - DEBUG - 0 missing values found
+29-06-2025 12:51:09.58 - INFO - Completed handling of duplicates in 0.040468 seconds
+29-06-2025 12:51:09.58 - INFO - Started handling of missing values...
+29-06-2025 12:51:09.59 - INFO - Found a total of 2 missing value(s)
+29-06-2025 12:51:09.59 - INFO - Started handling of NUMERICAL missing values... Method: "AUTO"
+29-06-2025 12:51:09.78 - DEBUG - LINREG imputation of 1 value(s) succeeded for feature "performance_score"
+29-06-2025 12:51:09.79 - INFO - Started handling of CATEGORICAL missing values... Method: "AUTO"
+29-06-2025 12:51:09.90 - DEBUG - KNN imputation of 1 value(s) succeeded for feature "status"
+29-06-2025 12:51:09.91 - INFO - Completed handling of missing values in 0.321924 seconds
+29-06-2025 12:51:09.91 - INFO - Started handling of outliers... Method: "WINZ"
+29-06-2025 12:51:09.95 - DEBUG - Outlier imputation of 11 value(s) succeeded for feature "age"
+29-06-2025 12:51:09.99 - DEBUG - Outlier imputation of 17 value(s) succeeded for feature "salary"
+29-06-2025 12:51:10.01 - DEBUG - Outlier imputation of 8 value(s) succeeded for feature "performance_score"
+29-06-2025 12:51:10.01 - INFO - Completed handling of outliers in 0.101888 seconds
+29-06-2025 12:51:10.01 - INFO - Skipped datetime feature conversion
+29-06-2025 12:51:10.01 - INFO - Started encoding categorical features... Method: "AUTO"
+29-06-2025 12:51:10.04 - DEBUG - Encoding skipped for feature "join_date"
+29-06-2025 12:51:10.05 - DEBUG - Encoding skipped for feature "name"
+29-06-2025 12:51:10.07 - DEBUG - Encoding to ONEHOT succeeded for feature "department"
+29-06-2025 12:51:10.07 - DEBUG - Encoding to ONEHOT succeeded for feature "status"
+29-06-2025 12:51:10.07 - INFO - Completed encoding of categorical features in 0.063582 seconds
+29-06-2025 12:51:10.08 - INFO - Started feature type conversion...
+29-06-2025 12:51:10.08 - DEBUG - Conversion to type INT succeeded for feature "id"
+29-06-2025 12:51:10.08 - DEBUG - Conversion to type INT succeeded for feature "age"
+29-06-2025 12:51:10.09 - DEBUG - Conversion to type INT succeeded for feature "salary"
+29-06-2025 12:51:10.09 - DEBUG - Conversion to type INT succeeded for feature "performance_score"
+29-06-2025 12:51:10.09 - INFO - Completed feature type conversion for 4 feature(s) in 0.013696 seconds
+29-06-2025 12:51:10.09 - INFO - CleanSync process completed in 0.556776 seconds

@@ -1,0 +1,35 @@
+services:
+  cleansync-app:
+    build: .
+    container_name: cleansync-web-app
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+    volumes:
+      - ./uploads:/app/uploads
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: Add a database service for future enhancements
+  # postgres:
+  #   image: postgres:13
+  #   container_name: cleansync-db
+  #   environment:
+  #     POSTGRES_DB: cleansync
+  #     POSTGRES_USER: cleansync_user
+  #     POSTGRES_PASSWORD: cleansync_password
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+
+volumes:
+  postgres_data: 
